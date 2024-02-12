@@ -6,8 +6,8 @@
 float gasValue;
 
 //defining devices id
-const char* PIRsensor = "44fc79f4-710b-44bb-a9cf-b0e56fd1a21d";  //Replace with YOUR deviceID for the PIR sensor
-const char* MQ2sensor = "8538fbc0-0432-451e-aac1-2372158c6b20"; //Replace this with YOUR deviceID for the MQ2 sensorr
+const char* PIRsensor = "44fc79f4-710b-44bb-a9cf-b0e56fd1a21d";  
+const char* MQ2sensor = "8538fbc0-0432-451e-aac1-2372158c6b20"; 
 //Used Pins
 const int MQ2pin = 34;
 const int motionSensor = 17;                                                                                                                                                                                                                                                                                                                                                                                   
@@ -80,12 +80,8 @@ void setup() {
 }
 
 void loop() {
-
-  // Check if there are any available commands
   if (Serial.available() > 0) {
-    // Read the incoming command
     String command = Serial.readString();
-    // Do something with the command
     processCommand(command);
   }
   if (!voneClient.connected()) {
